@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Changer</title>
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+<body>
+    <% if(locals.newValue){ %>
+       <h1><%= newValue %></h1> 
+       <form action="/newCurrency" method="post">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount">
+        <label for="oldCurrency">Currency From:</label>
+        <input type="text" id="oldCurrency" name="oldCurrency">
+        <label for="newCurrency">Currency To:</label>
+        <input type="text" id="newCurrency" name="newCurrency">
+        <button type="submit">Submit</button>
+    </form>
+    <% }else{ %>
+        <form action="/newCurrency" method="post">
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount">
+            <label for="oldCurrency">Currency From:</label>
+            <input type="text" id="oldCurrency" name="oldCurrency">
+            <label for="newCurrency">Currency To:</label>
+            <input type="text" id="newCurrency" name="newCurrency">
+            <button type="submit">Submit</button>
+        </form>
+        <% }  %>
+         
+</body>
+</html>
